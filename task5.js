@@ -1,3 +1,3 @@
-function setBackgroundColor(id, clr) {
-document.getElementById(id).style.backgroundColor = clr;
+function setBackgroundColor(id, Color) {
+document.getElementById(id).style.backgroundColor = Color;
 }
