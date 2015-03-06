@@ -6,11 +6,13 @@ var assert = {
        equals: function(expectedResults, returnResults) {
          total = passed+failed;
 
-        var newElement = document.createElement('div');
-        newElement.id = "myElement"+total;
-        document.body.appendChild(newElement);
-    
-         var myDiv = new RedOrGreen(newElement.id);
+         var newElement = document.createElement('div');
+         newElement.id = "myElement"+total;
+         newElement.className = "test"
+         //document.body.appendChild(newElement);
+         document.getElementById("tests").appendChild(newElement);
+
+        var myDiv = new RedOrGreen(newElement.id);
 
         if(expectedResults===returnResults){
 
@@ -24,14 +26,14 @@ var assert = {
         }
         total = passed+failed;
       
-      var newEl = document.createElement('p');
-        newEl.innerHTML='passed:'+passed+' failed: '+failed+ ' totalpassed: '+total;
-        document.body.appendChild(newEl);
+        //var newEl = document.createElement('p');
+        document.getElementById("progress").innerHTML ='passed:'+passed+' failed: '+failed+ ' totalpassed: '+total;
+        //newElement.innerHTML = newEl.innerHTML;
       }
 };
 
         var TestMyCode={
           run:function(testfunction,functiontoreturn){
-          functiontoreturn(assert);
+            functiontoreturn(assert);
           }
         };
